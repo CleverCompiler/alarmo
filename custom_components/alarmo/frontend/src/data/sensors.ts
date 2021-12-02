@@ -15,6 +15,7 @@ export const isValidSensor = (entity: HassEntity, showAllDeviceClasses: boolean)
       [
         'door',
         'garage_door',
+        'garage',
         'gas',
         'heat',
         'lock',
@@ -41,6 +42,7 @@ export const sensorClassToType = (stateObj: HassEntity): ESensorTypes | undefine
   switch (stateObj.attributes.device_class) {
     case 'door':
     case 'garage_door':
+    case 'garage':
     case 'lock':
       return ESensorTypes.Door;
     case 'window':
